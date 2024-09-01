@@ -10,3 +10,4 @@ A -> left<br />
 D -> right<br />
 Spacebar -> restart (only when the game is over)<br />
 Esc -> quit<br />
+Support for joystic and buttons available.<br />
