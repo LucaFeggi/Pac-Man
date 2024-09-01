@@ -1,6 +1,8 @@
 # Pac-Man
 Newer version of the Pac-Man clone.<br />
 Made in c++ with SDL2 graphic library.<br />
+Visual Studio code compilation:<br />
+everything is already setupped in the sln. file, just compile the code.<br />
 Commands:<br />
 W -> up<br />
 S -> down<br />
