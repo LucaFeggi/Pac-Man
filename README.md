@@ -3,11 +3,14 @@ Newer version of the Pac-Man clone.<br />
 Made in c++ with SDL2 graphic library.<br />
 Visual Studio code compilation:<br />
 everything is already setupped in the .sln file, just compile and run the code.<br />
-Commands:<br />
+Keyboard commands:<br />
 W -> up<br />
 S -> down<br />
 A -> left<br />
 D -> right<br />
 Spacebar -> restart (only when the game is over)<br />
 Esc -> quit<br />
-Support for joystic and buttons available.<br />
+Touch commands:<br />
+Move the finger in the direction you want Pac to move.<br />
+Tap the screen to restart the game (only when it's over).<br />
+Support for joystick and buttons available.<br />
