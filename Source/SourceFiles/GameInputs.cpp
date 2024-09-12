@@ -6,7 +6,9 @@ GameInputs::GameInputs(bool* Quit, bool* IsToRestart, Directions* Mover) :
 	Mover(Mover),
 	Event(),
 	MyJoysticks(),
-	JoystickDeadZone(8000)
+	JoystickDeadZone(8000),
+	IsFingerDown(false),
+	FingerDownCoords{WindowWidth/2, WindowHeight/2}
 {
 	for (int i = 0; i < SDL_NumJoysticks(); i++) {
 		MyJoysticks.push_back(SDL_JoystickOpen(i));
@@ -34,6 +36,7 @@ void GameInputs::Get() {
 		Keyboard();
 		Buttons();
 		Joysticks();
+		Touch();
 	}
 }
 
@@ -120,5 +123,35 @@ void GameInputs::Joysticks() {
 				}
 			}
 		}
+	}
+}
+
+void GameInputs::Touch() {
+	if (Event.type == SDL_FINGERDOWN) {
+		IsFingerDown = true;
+		FingerDownCoords = { int(Event.tfinger.x * WindowWidth), int(Event.tfinger.y * WindowHeight)};
+	}
+	if (Event.type == SDL_FINGERUP && IsFingerDown) {
+		*IsToRestart = true;
+		IsFingerDown = false;
+		Vec2<int> FingerUpCoords = { int(Event.tfinger.x * WindowWidth), int(Event.tfinger.y * WindowHeight)};
+		if (FingerDownCoords == FingerUpCoords) {
+			return;
+		}
+		int DiffX = FingerDownCoords.x - FingerUpCoords.x;
+		int DiffY = FingerDownCoords.y - FingerUpCoords.y;
+		if (abs(DiffX) > abs(DiffY)) {
+			if (DiffX > 0) {
+				Mover[1] = Directions::Left;
+				return;
+			}
+			Mover[1] = Directions::Right;
+			return;
+		}
+		if (DiffY > 0) {
+			Mover[1] = Directions::Up;
+			return;
+		}
+		Mover[1] = Directions::Down;
 	}
 }
