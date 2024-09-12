@@ -12,5 +12,5 @@ Spacebar -> restart (only when the game is over)<br />
 Esc -> quit<br />
 Touch commands:<br />
 Move the finger in the direction you want Pac to move.<br />
-Tap the screen to restart the game (only when it's over).<br />
+Tap the screen to restart the game (only when the game is over).<br />
 Support for joystick and buttons available.<br />
