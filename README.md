@@ -15,5 +15,4 @@ Esc -> quit<br />
 Touch commands:<br />
 Move the finger in the direction you want Pac to move.<br />
 Tap the screen to restart the game (only when the game is over).<br />
-![Screenshot 2024-09-22 160916](https://github.com/user-attachments/assets/0f13042f-6c5f-47d6-bfbf-7713f10385a5)
 </p>
