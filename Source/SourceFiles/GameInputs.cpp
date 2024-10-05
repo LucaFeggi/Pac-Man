@@ -29,8 +29,8 @@ void GameInputs::Get() {
 			break;
 		}
 		Keyboard();
-		Buttons();
 		Joystick();
+		Buttons();
 		Touch();
 	}
 }
