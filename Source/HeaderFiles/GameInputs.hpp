@@ -2,7 +2,6 @@
 #define PACMAN_HEADERFILES_GAMEINPUTS_HPP_
 
 #include <SDL.h>
-#include <vector>
 #include "Vec2.hpp"
 #include "Timer.hpp"
 #include "Globals.hpp"
@@ -14,15 +13,15 @@ public:
 	void Get();
 private:
 	void Keyboard();
+	void Joystick();
 	void Buttons();
-	void Joysticks();
 	void Touch();
 	bool* Quit;
 	bool* IsToRestart;
 	Directions* Mover;
 	SDL_Event Event;
 	const int JoystickDeadZone;
-	std::vector<SDL_Joystick*> MyJoysticks;
+	SDL_Joystick* MyJoystick;
 	bool IsFingerDown;
 	Vec2<int> FingerDownCoords;
 };
