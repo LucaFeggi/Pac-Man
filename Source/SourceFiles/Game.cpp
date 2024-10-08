@@ -24,8 +24,9 @@ void Game::Run() {
 	while (!Quit) {
 		MyFpsManager.SetTime();
 		MyGameInputs.Get();
-		if(Quit)
+		if(Quit) {
 			break;
+		}
 		SDL_RenderClear(Renderer);
 		MyGameStateMachine.Run();
 		SDL_RenderPresent(Renderer);
