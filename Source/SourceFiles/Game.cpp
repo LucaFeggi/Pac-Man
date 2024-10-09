@@ -1,4 +1,5 @@
 #include "Game.hpp"
+#include "Sounds.hpp"
 
 Game::Game() :
 	InitSDL(SDL_Init(SDL_INIT_EVERYTHING)),
@@ -15,6 +16,7 @@ Game::Game() :
 }
 
 Game::~Game() {
+	Sounds::Destructor();
 	SDL_DestroyRenderer(Renderer);
 	SDL_DestroyWindow(Window);
 	SDL_Quit();	
